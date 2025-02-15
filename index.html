@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Rank</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Check Toxicity in Text</h1>
+
+<form action="/analyze" method="POST">
+<textarea name="text" rows="4" cols="50" placeholder="Enter text..."></textarea>
+<br>
+<button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+<h2>Results:</h2>
+<p><strong>Text:</strong> {{ text }}</p>
+<p><strong>Toxicity Score:</strong> {{ result["toxicity"] }}</p>
+<p><strong>Severe Toxicity:</strong> {{ result["severe_toxicity"] }}</p>
+<p><strong>Obscene:</strong> {{ result["obscene"] }}</p>
+<p><strong>Threat:</strong> {{ result["threat"] }}</p>
+<p><strong>Insult:</strong> {{ result["insult"] }}</p>
+<p><strong>Identity Attack:</strong> {{ result["identity_attack"] }}</p>
+{% endif %}
+</body>
+</html>

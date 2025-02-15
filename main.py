@@ -9,7 +9,7 @@ def index():
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
-text = request.form["text"] # HTML फॉर्म से टेक्स्ट लो
+    text = request.form["text"] # HTML फॉर्म से टेक्स्ट लो
 result = check_toxicity(text) # Detoxify से एनालिसिस करो
 
 # रिजल्ट को HTML पेज में भेजो

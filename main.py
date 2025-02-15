@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from modules.toxic_checker import check_toxicity # Detoxify फाइल इम्पोर्ट करें
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route("/")
 def index():
